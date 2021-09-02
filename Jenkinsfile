@@ -25,8 +25,6 @@ pipeline {
         phase = 'post  build'
       }
       steps {
-        cleanWs()
-        timestamps()
         script {
           def x = ["alpha", "beta", "capsule"]
 
