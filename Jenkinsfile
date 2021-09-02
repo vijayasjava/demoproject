@@ -9,6 +9,16 @@ pipeline {
       }
     }
 
+    stage('build') {
+      agent any
+      environment {
+        reference = 'build phase'
+      }
+      steps {
+        sh 'echo $PATH'
+      }
+    }
+
   }
   environment {
     version = '1.0'
