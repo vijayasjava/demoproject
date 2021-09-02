@@ -19,6 +19,25 @@ pipeline {
       }
     }
 
+    stage('postbuild') {
+      agent any
+      environment {
+        phase = 'post  build'
+      }
+      steps {
+        cleanWs()
+        timestamps()
+        script {
+          def x = ["alpha", "beta", "capsule"]
+
+          for(def t : x) {
+            println(t)
+          }
+        }
+
+      }
+    }
+
   }
   environment {
     version = '1.0'
